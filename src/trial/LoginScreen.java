@@ -9,11 +9,11 @@ public class LoginScreen extends JPanel
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public LoginScreen ()
+	public LoginScreen (JFrame frame)
 	{
 		final JTextField usr = new JTextField("Enter Email login here");
 		usr.setBounds(1, 1, 300, 30);
-		final JTextField pas = new JTextField("Enter password here");
+		final JPasswordField pas = new JPasswordField("Enter password here");
 		pas.setBounds(1,40,300,30);
  
 		JButton button = new JButton(" >> click to open upload screen <<");
@@ -32,12 +32,13 @@ public class LoginScreen extends JPanel
 				//System.out.println("You clicked the button");
  
 				String getUser = usr.getText();
-				String getPass = pas.getText();
+				char[] getPass = pas.getPassword();
+				String pword = new String(getPass);
 				EmailSender.setEmail(getUser);
-				EmailSender.setPass(getPass);
+				EmailSender.setPass(pword);
 				EmailSender.createSession();
-				/*EmailSender.sendEmail("dominicxcliu@gmail.com","butts");*/
 				ExcelInput.createAndShowExcelInput();
+				frame.setVisible(false);
 
 			}
 		});
@@ -45,10 +46,12 @@ public class LoginScreen extends JPanel
 	public static void createAndShowLogin() {
         //Create and set up the window.
         JFrame frame = new JFrame("Email Login");
-        frame.getContentPane().add(new LoginScreen());
+        frame.getContentPane().add(new LoginScreen(frame));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(310, 300);
+        frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+		//fix me, set to false
     }
 
 }

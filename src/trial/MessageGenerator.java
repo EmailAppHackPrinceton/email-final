@@ -4,9 +4,9 @@ import java.util.HashMap;
 
 
 public class MessageGenerator {
+	static ArrayList<String> messages = new ArrayList<String>();
 	
 	static public void MessageGenerator(String testMessage, HashMap<Integer,String[]> dictionary) {
-		ExcelReader.readExcelSheet("");
 		Part[] parts = MessageParser.MessageParser(testMessage, dictionary);
 		
 		for(int i = 0; i < ExcelReader.people.size(); i++) {
@@ -38,7 +38,7 @@ public class MessageGenerator {
 					}
 				}
 			}
-			System.out.println(message);
+			messages.add(message);
 		}
 	}
 

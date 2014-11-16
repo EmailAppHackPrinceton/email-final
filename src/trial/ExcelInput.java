@@ -63,23 +63,18 @@ public class ExcelInput extends JPanel
 					CreatorScreen.createAndShowCreator(filePath);
 				}
 			}
-		});
-		
-		
-		
-		
-		
+		});		
 	}
 	
 	public static void createAndShowExcelInput()
 	{
-		
 		
 		final JFrame frame = new JFrame("Uploader");
 		frame.getContentPane().add(new ExcelInput(frame));
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(310, 300);
+		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 
 		

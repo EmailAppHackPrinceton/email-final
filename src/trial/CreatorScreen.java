@@ -99,9 +99,14 @@ public class CreatorScreen extends JPanel
 				}
 			}
 			//Positioner.createAndShowPositioner();
-			String testMessage = "Hi My name is -0-. My email is -1-. -2-. You owe -3- dollars. -4-. "
-					+ "Your favorite team is -5-. -6-.";
-			MessageGenerator.MessageGenerator(testMessage, dictionary);
+//			String testMessage = "Hi, My name is -0-. My email is -1-. -2-. You owe -3- dollars. -4-. "
+//					+ "Your favorite team is -5-. -6-.";
+			//hide frame
+			//call MessageCenter
+			//set String msg = MessageCenter()
+			//call MessageGenerator(msg,dictionary)
+			f.setVisible(false);
+			MessageCenter.createAndShowMessageCenter(dictionary);
 		}
 	});
     f.setSize(300, 200);

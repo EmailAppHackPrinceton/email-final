@@ -46,7 +46,7 @@ public class EmailSender {
         mimeMessage.addRecipient(Message.RecipientType.TO,
                                  new InternetAddress(to));
         // Set Subject: header field
-        mimeMessage.setSubject("butts");
+        mimeMessage.setSubject("butts"); //fixme
         // Now set the actual message
         mimeMessage.setText(emailMessage);
 
@@ -58,7 +58,7 @@ public class EmailSender {
      }
   }
 
-  public static String messageGenerator(String firstName, String lastName) {
+  /*public static String messageGenerator(String firstName, String lastName) {
       String completeMessage = "";
       String beginning = "Dear " + firstName + " " + lastName + ",\n\n";
       String generalMessage = "butts";
@@ -66,18 +66,18 @@ public class EmailSender {
       completeMessage = completeMessage + beginning;
       completeMessage = completeMessage + generalMessage;
       return completeMessage;
-  }
+  }*/
   
   public static void setEmail(String login)
   {
 	  from = login;
-	  System.out.println(from);
+	 // System.out.println(from);
   }
 
   public static void setPass(String pass)
   {
 	  password = pass;
-	  System.out.println(password);
+	//  System.out.println(password);
   }
   
   public static void main(String [] args) 
